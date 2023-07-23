@@ -12,3 +12,14 @@ This is Tourist Guide App. It help tourist to find famous places, restaurants an
 * Write review and give feedback
 * Create account using Google Sign In
 * Change profile photo
+
+### Third Party Libraries
+* Google Maps API to show location in-app
+* Google Sign In API for account creation
+* Firebase as database
+
+
+
+
+**Note:** All places data is collected by us and save in firebase database. Firebase access is removed from project
+  
