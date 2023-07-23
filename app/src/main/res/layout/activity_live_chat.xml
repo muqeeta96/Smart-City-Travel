@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar" />
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/messageLayout"
+        android:layout_below="@id/toolbarLayout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:stackFromEnd="true" />
+
+    <RelativeLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/enterMessageEdit"
+            android:layout_width="330dp"
+            android:layout_height="45dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/message_edittext_bg"
+            android:focusable="true"
+            android:hint="@string/type_message"
+            android:paddingHorizontal="15dp"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@id/enterMessageEdit"
+            android:background="@drawable/all_round_corner">
+
+            <ImageView
+                android:id="@+id/sendMessageImg"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_send_message" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/locationPermissionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/allow_location_permission"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/locationSettingBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationPermissionBtn"
+        android:layout_centerInParent="true"
+        android:text="@string/enable_location_settings_"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/notAvailableTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/this_feature_is_not_available_in_your_area"
+        android:textColor="@color/default_black"
+        android:textSize="15sp"
+        android:visibility="gone" />
+</RelativeLayout>

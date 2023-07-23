@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".Activities.PinCodeActivity">
+
+    <include
+        android:id="@+id/resetPasswordBackground"
+        layout="@layout/reset_password_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/logoLayout"
+        layout="@layout/logo" />
+
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/segoe_ui"
+        android:text="@string/title_here"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/pincodeTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:alpha="0.9"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:text="@string/send_4_digits"
+        android:textSize="16sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pincodeLayout"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pincodeTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        android:theme="@style/TextInputLayoutStyle"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/white"
+        app:boxStrokeErrorColor="@color/red"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red"
+        app:hintTextColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pinCodeEdit"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/pin_code"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@drawable/color_cursor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/pincodeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/light_orange_2"
+        android:text="@string/continue_"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/resendCodeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/continueBtn"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/resend_code"
+        android:textSize="13sp"
+        android:theme="@style/WhiteRippleEffectTheme" />
+
+    <include
+        android:id="@+id/loading_progress_bar"
+        layout="@layout/loading_progress_bar" />
+</RelativeLayout>

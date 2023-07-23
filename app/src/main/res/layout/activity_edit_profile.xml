@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".Activities.EditProfileActivity">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar" />
+
+    <include
+        android:id="@+id/selectProfileImgLayout"
+        layout="@layout/select_profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" />
+
+    <com.google.android.material.textfield.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/fullNameLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectProfileImgLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:textColorHint="@color/default_black"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="@color/default_black"
+        app:boxStrokeErrorColor="@color/theme_light"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/theme_light"
+        app:hintTextColor="@color/default_black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fullNameEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/emailLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullNameLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/default_black"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="@color/default_black"
+        app:hintTextColor="@color/default_black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/default_black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/emailLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:enabled="false"
+        android:text="@string/save"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/changePasswordBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/saveBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/change_password"
+        android:textAllCaps="false" />
+
+    <include
+        android:id="@+id/loading_progress_bar"
+        layout="@layout/loading_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarLayout"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

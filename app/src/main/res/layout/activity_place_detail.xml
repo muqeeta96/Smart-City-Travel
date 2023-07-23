@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".Activities.PlaceDetailActivity">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/UILayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarLayout"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/imageSliderViewLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSliderView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="@color/default_black"
+                app:sliderIndicatorUnselectedColor="@color/white"
+                app:sliderScrollTimeInSec="3" />
+
+            <RelativeLayout
+                android:id="@+id/txtStyleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignBottom="@+id/imageSliderView"
+                android:background="@drawable/black_background_gradient">
+
+                <TextView
+                    android:id="@+id/placeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/cityTxt"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/place_name"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/cityTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="@string/city" />
+
+                <RelativeLayout
+                    android:id="@+id/favoriteLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <ImageView
+                        android:id="@+id/favoriteBorder"
+                        android:layout_width="31dp"
+                        android:layout_height="31dp"
+                        android:src="@drawable/ic_favorite_border" />
+
+                    <ImageView
+                        android:id="@+id/favoriteFilled"
+                        android:layout_width="31dp"
+                        android:layout_height="31dp"
+                        android:src="@drawable/ic_favorite_filled"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageSliderViewLayout" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/placeDetailViewPager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tabLayout" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/CheckConnectionLayout"
+        layout="@layout/no_connection" />
+</RelativeLayout>

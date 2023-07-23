@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="popularLayout" type="id" />
+    <item name="popularTitle" type="id" />
+    <item name="popularRecyclerView" type="id" />
+    <item name="recommendationLayout" type="id" />
+    <item name="recommendationTitle" type="id" />
+    <item name="recommendationRecyclerView" type="id" />
+    <item name="restaurantLayout" type="id" />
+    <item name="restaurantTitle" type="id" />
+    <item name="restaurantRecyclerView" type="id" />
+    <item name="placeLayout" type="id" />
+    <item name="placeTitle" type="id" />
+    <item name="placeRecyclerView" type="id" />
+    <item name="hotelLayout" type="id" />
+    <item name="hotelTitle" type="id" />
+    <item name="hotelRecyclerView" type="id" />
+    <item name="backImg" type="id" />
+    <item name="searchView" type="id" />
+    <item name="clearImg" type="id" />
+</resources>

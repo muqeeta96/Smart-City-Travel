@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editReviewLayout"
+    android:layout_width="wrap_content"
+    android:animateLayoutChanges="true"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <include
+        android:id="@+id/reviewLayout"
+        layout="@layout/review_view" />
+
+    <TextView
+        android:id="@+id/editReviewTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewLayout"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/segoe_ui"
+        android:paddingHorizontal="2dp"
+        android:paddingVertical="5dp"
+        android:text="@string/edit_your_review"
+        android:textColor="@color/theme_light"
+        android:textStyle="bold" />
+</RelativeLayout>

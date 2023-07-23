@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reviewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/avgRatingBar"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="10dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImg"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/light_white"
+        android:scaleType="centerCrop"
+        android:theme="@style/CircularImage" />
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/profileImg"
+        android:fontFamily="@font/segoe_ui"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/profileImg"
+        android:numStars="5"
+        android:rating="3.5"
+        android:stepSize="0.1"
+        android:theme="@style/RatingBarColor" />
+
+    <TextView
+        android:id="@+id/reviewTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ratingBar"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:justificationMode="inter_word"
+        android:text="This is my feedback"
+        android:textColor="@color/black" />
+</RelativeLayout>

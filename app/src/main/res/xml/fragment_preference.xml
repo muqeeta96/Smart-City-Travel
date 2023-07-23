@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference
+        app:icon="@drawable/ic_delete_account"
+        app:key="delete_account"
+        app:summary="Delete account permanently"
+        app:title="Delete Account" />
+</PreferenceScreen>

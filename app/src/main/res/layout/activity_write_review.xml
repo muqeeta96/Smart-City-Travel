@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarLayout"
+        android:scrollbars="none">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@color/light_white"
+                android:scaleType="centerCrop"
+                android:theme="@style/CircularImage" />
+
+            <TextView
+                android:id="@+id/nameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameTxt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:theme="@style/RatingBarColor" />
+
+            <com.google.android.material.textfield.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/reviewLayout"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="@color/theme_light"
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:errorEnabled="false"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reviewEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/write_a_review_"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:paddingVertical="15dp"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/reviewLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="50dp"
+                android:text="@string/submit" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/loading_progress_bar"
+        layout="@layout/loading_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbarLayout" />
+</RelativeLayout>

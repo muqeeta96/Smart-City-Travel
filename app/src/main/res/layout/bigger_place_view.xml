@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="188dp"
+    android:layout_height="282dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/blue" />
+
+        <ImageView
+            android:id="@+id/placeImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/placeNameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignBottom="@+id/placeImg"
+            android:layout_centerHorizontal="true"
+            android:background="@color/trans_black"
+            android:gravity="center"
+            android:text="Place Name"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/ratingTxt"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignEnd="@+id/placeImg"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:text="@string/_0_0"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+
+
